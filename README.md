@@ -1,11 +1,4 @@
 ## Descricao
-```
-Api para trazer números que mais e menos vezes saíram durante todos os concursos, e com um gerador de tres jogos aleatórios.
-
-Atualizada concurso 2159 do dia 17/02/2021
-
-https://asloterias.com.br/download-todos-resultados-lotofacil
-```
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
@@ -25,7 +18,7 @@ utilizar as credencias utilizadas no docker-compose.yml
 
 exemplo:
 SISTEMA: postgreSQL
-SERVIDOR: loteriapgsql (nome do container utilizado no docker-compose.yml)
+SERVIDOR: shortener_pgsql (nome do container utilizado no docker-compose.yml)
 USUARIO: pguser (usuario e senha utilizados no docker-compose.yml)
 SENHA: pgpassword (usuario e senha utilizados no docker-compose.yml)
 BASE DE DADOS: nao precisa informar valor
