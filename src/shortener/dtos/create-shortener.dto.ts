@@ -12,5 +12,4 @@ export class CreateShortenerDTO {
     @IsNotEmpty()
     @IsString()
     url: string;
-
 }

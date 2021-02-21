@@ -1,6 +1,8 @@
-import { ShortenerDto } from '../dtos';
+import { ShortenerDTO } from '../dtos';
 import { ShortenerEntity } from '../entities';
-import { Repository, EntityRepository, EntityManager } from "typeorm";
+import { ERROR_MESSAGES } from './../constants';
+import { Repository, EntityRepository } from "typeorm";
+import { ShortenerDatabaseException } from './../exceptions';
 
 /**
  * @author Jeyson Luiz Romualdo
@@ -10,33 +12,36 @@ import { Repository, EntityRepository, EntityManager } from "typeorm";
  */
 @EntityRepository(ShortenerEntity)
 export class ShortenerRepository extends Repository<ShortenerEntity> {
-    constructor(
-        private entityManager: EntityManager
-    ) { super() }
 
     /**
-     * @param {ShortenerDto} shortenerDto
+     * @param {ShortenerDTO} shortenerDTO
      * @return {*}  {Promise<ShortenerEntity>}
      * @memberof ShortenerRepository
      */
-    async createShortener(shortenerDto: ShortenerDto): Promise<ShortenerEntity> {
-        return await this.save(shortenerDto);
+    async createShortener(shortenerDTO: ShortenerDTO): Promise<ShortenerEntity> {
+        try {
+            return await this.save(shortenerDTO);
+        } catch (error) {
+            throw new ShortenerDatabaseException(
+                ERROR_MESSAGES.SHORTENER_DATABASE_SAVE_ERRROR,
+                error
+            );
+        }
     }
 
     /**
-     * @param {string} query
-     * @return {*}  {Promise<any>}
+     * @param {string} shortenerUrl
+     * @return {*}  {Promise<ShortenerEntity|null>}
      * @memberof ShortenerRepository
      */
-    async findGames(query: string): Promise<any> {
-        return await this.entityManager.connection.query(query);
-    }
-
-    /**
-     * @return {*}  {Promise<ShortenerEntity[]>}
-     * @memberof ShortenerRepository
-     */
-    async findAll():Promise<ShortenerEntity[] | null> {
-        return await this.find();
+    async findShortener(shortenerUrl: string): Promise<ShortenerEntity | null> {
+        try {
+            return await this.findOne(shortenerUrl);
+        } catch (error) {
+            throw new ShortenerDatabaseException(
+                ERROR_MESSAGES.SHORTENER_DATABASE_FIND_SHORTENER_ERRROR,
+                error
+            );
+        }
     }
 }

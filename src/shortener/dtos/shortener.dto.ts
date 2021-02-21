@@ -4,9 +4,9 @@ import { CreateDateColumn } from 'typeorm';
 /**
  * @author Jeyson Luiz Romualdo
  * @export
- * @class ShortenerDto
+ * @class ShortenerDTO
  */
-export class ShortenerDto {
+export class ShortenerDTO {
 
     @IsNotEmpty()
     @IsString()

@@ -11,4 +11,7 @@ export class ResponseShortenerDTO {
     @IsString()
     newUrl: string;
 
+    @IsNotEmpty()
+    @IsString()
+    url: string;
 }

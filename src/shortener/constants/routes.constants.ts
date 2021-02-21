@@ -1,3 +1,4 @@
 export const ROUTES = {
-    SHORTENER_URL: 'urls',
+    SHORTENER_URL: 'encurtador',
+    SHORTENER: ':shorted_url'
 }

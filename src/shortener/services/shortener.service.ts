@@ -1,10 +1,10 @@
 import { addDays } from 'date-fns';
 import { Injectable } from '@nestjs/common';
-import { CreateShortenerDTO } from '../dtos';
+import { ERROR_MESSAGES } from './../constants';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ShortenerRepository } from '../repositories';
-import { ShortenerDto as ShortenerDTO } from '../dtos/shortener.dto';
-import { ResponseShortenerDTO } from './../dtos/response-shortener.dto';
+import { ShortenerNotFoundException } from './../exceptions';
+import { CreateShortenerDTO, ShortenerDTO, ResponseShortenerDTO } from '../dtos';
 
 /**
  * @author Jeyson Luiz Romualdo
@@ -20,7 +20,7 @@ export class ShortenerService {
 
     /**
      * @param createShortener
-     * @return {*}  {Promise<ShortenerEntity>}
+     * @return {*}  {Promise<ResponseShortenerDTO>}
      * @memberof ShortenerService
      */
     async createShortener(createShortener: CreateShortenerDTO): Promise<ResponseShortenerDTO> {
@@ -35,6 +35,26 @@ export class ShortenerService {
 
         const responseShortenerDTO = new ResponseShortenerDTO();
         responseShortenerDTO.newUrl = process.env.URI + shortener.shorted_url;
+
+        return responseShortenerDTO;
+    }
+
+    /**
+     * @param getShortener
+     * @return {*}  {Promise<ResponseShortenerDTO>}
+     * @memberof ShortenerService
+     */
+    async getShortener(shortenerUrl: string): Promise<ResponseShortenerDTO> {
+        const shortener = await this.shortenerRepository.findShortener(shortenerUrl);
+
+        if (!shortener) {
+            throw new ShortenerNotFoundException(
+                ERROR_MESSAGES.SHORTENER_NOT_FOUND_EXCEPTION
+            );
+        }
+
+        const responseShortenerDTO = new ResponseShortenerDTO();
+        responseShortenerDTO.url = shortener.url;
 
         return responseShortenerDTO;
     }

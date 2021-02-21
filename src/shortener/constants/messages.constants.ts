@@ -3,5 +3,8 @@ export const SUCCESS_MESSAGES = {
 };
 
 export const ERROR_MESSAGES = {
-    DATABASE_ALREADY_POPULATE: 'Base de dados já atualizada!'
+    SHORTENER_DATABASE_SAVE_ERRROR: 'Ocorreu um erro ao salvar os dados!',
+    SHORTENER_DATABASE_FIND_SHORTENER_ERRROR: 'Ocorreu um erro ao buscar os dados!',
+
+    SHORTENER_NOT_FOUND_EXCEPTION: 'Não foi localizado nenhum registro!'
 };
