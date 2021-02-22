@@ -1,10 +1,14 @@
 # compiled output
-/dist
+# /dist
 /node_modules
 /volumes
-/env
-/env/development.env
-
+# /env
+# /env/.development.env
+# env/.development.env
+/env/
+env/*
+env
+.development.env
 # Tests
 /coverage
 /.nyc_output
