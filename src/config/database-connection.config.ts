@@ -22,11 +22,7 @@ export class DatabaseTypeOrmConfig implements TypeOrmOptionsFactory {
             database: process.env.DB_DATABASE,
             entities: [__dirname + '/../**/entities/*.entity{.ts,.js}'],
             migrations: [__dirname + '/../**/entities/*.entity{.ts,.js}'],
-            // migrationsDir: "./../shortener/infra/typeorm/migrations",
-            cli: {
-                "migrationsDir": "./../shortener/infra/typeorm/migrations"
-              },
-            // synchronize: true,// deixar esta linha descomentada apenas na primeira vez que rodar a aplicacao, para gerar as tabelas nescessarias do banco
+            synchronize: true,// deixar esta linha descomentada apenas na primeira vez que rodar a aplicacao, para gerar as tabelas nescessarias do banco
             autoLoadEntities: true,
         };
     }
