@@ -6,7 +6,7 @@
 # /env/.development.env
 # env/.development.env
 
-.development.env
+# .development.env
 .production.env
 # Tests
 /coverage

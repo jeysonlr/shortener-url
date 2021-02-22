@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "b9d61a13-d182-4921-a177-a71abcb61e2e",
+		"name": "Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Encurtar url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"http://wisereducacao.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/encurtador",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"encurtador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar url que foi encurtada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/1rdnwu2s",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"1rdnwu2s"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Encurtar URL PRODUCAO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"http://wisereducacao.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wisershortener.herokuapp.com/encurtador",
+					"protocol": "https",
+					"host": [
+						"wisershortener",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"encurtador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar URl encurtada PRODUCAO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wisershortener.herokuapp.com/6s8ovs5al",
+					"protocol": "https",
+					"host": [
+						"wisershortener",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"6s8ovs5al"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
