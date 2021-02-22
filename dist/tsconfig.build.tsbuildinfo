@@ -3882,7 +3882,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "43317e3291e72c32c05d2289874c5877d53eaa4d29a078c9b337318419f7be48",
+        "version": "2890d4b0ae64698250dc2a8b361a2a66e891d090789a03f62d04c75146e60630",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -14729,8 +14729,6 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/typescript/lib/lib.scripthost.d.ts",
       "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
-      "../src/app.module.ts",
-      "../src/config/database-connection.config.ts",
       "../src/config/index.ts",
       "../src/main.ts",
       "../src/shared/constants/index.ts",
