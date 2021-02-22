@@ -47,8 +47,6 @@ em producao
 https://wisershortener.herokuapp.com/documentation
 ```
 
-## primeiro popular a tabela e depois consumir os resultados
-
 ## Running the app
 
 ```bash
