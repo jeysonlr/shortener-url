@@ -2,17 +2,8 @@
 /dist
 /node_modules
 /volumes
-
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# OS
-.DS_Store
+/env
+/env/development.env
 
 # Tests
 /coverage
@@ -33,3 +24,4 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+node_modules
