@@ -58,6 +58,10 @@ $ npm run start:dev
 
 ```
 
+```
+Verão em producao aqui  https://wisershortener.herokuapp.com
+```
+
 ### email
 ``
 jeysonlr@gmail.com
