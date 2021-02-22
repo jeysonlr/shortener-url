@@ -38,7 +38,13 @@ $ npm install
 
 ## Documentacão com as rotas da API
 ```
+local
+
 http://localhost:8081/documentation
+
+em producao
+
+https://wisershortener.herokuapp.com/documentation
 ```
 
 ## primeiro popular a tabela e depois consumir os resultados
