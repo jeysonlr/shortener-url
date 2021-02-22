@@ -37,6 +37,6 @@ async function bootstrap() {
     });
     SwaggerModule.setup('documentation', app, document);
 
-    await app.listen(8081);
+    await app.listen(process.env.PORT || 8081);
 }
 bootstrap();
