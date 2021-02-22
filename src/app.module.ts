@@ -7,7 +7,6 @@ import { ShortenerModule } from './shortener/shortener.module';
 @Module({
     imports: [
         ConfigModule.forRoot({
-            // envFilePath: `env/.${process.env.NODE_ENV}.env`,
             envFilePath: `.${process.env.NODE_ENV}.env`,
             isGlobal: true,
         }),

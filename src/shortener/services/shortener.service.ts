@@ -1,10 +1,11 @@
-import { addDays } from 'date-fns';
 import { Injectable } from '@nestjs/common';
+import { addDays, isBefore } from 'date-fns';
 import { ERROR_MESSAGES } from './../constants';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ShortenerRepository } from '../repositories';
-import { ShortenerNotFoundException } from './../exceptions';
 import { CreateShortenerDTO, ShortenerDTO, ResponseShortenerDTO } from '../dtos';
+import { ShortenerUnauthorizedException, ShortenerNotFoundException } from './../exceptions';
+import ShortenerRepositoryInterface from '../repositories/shortener.repository.interface';
 
 /**
  * @author Jeyson Luiz Romualdo
@@ -15,7 +16,7 @@ import { CreateShortenerDTO, ShortenerDTO, ResponseShortenerDTO } from '../dtos'
 export class ShortenerService {
     constructor(
         @InjectRepository(ShortenerRepository, 'databaseConnection')
-        private readonly shortenerRepository: ShortenerRepository
+        private readonly shortenerRepository: ShortenerRepositoryInterface
     ) { }
 
     /**
@@ -50,6 +51,12 @@ export class ShortenerService {
         if (!shortener) {
             throw new ShortenerNotFoundException(
                 ERROR_MESSAGES.SHORTENER_NOT_FOUND_EXCEPTION
+            );
+        }
+
+        if (isBefore(shortener.expires_in, new Date(Date.now()))) {
+            throw new ShortenerUnauthorizedException(
+                ERROR_MESSAGES.SHORTENER_EXPIRED_EXCEPTION
             );
         }
 

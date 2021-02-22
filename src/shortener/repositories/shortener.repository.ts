@@ -3,6 +3,7 @@ import { ShortenerEntity } from '../entities';
 import { ERROR_MESSAGES } from './../constants';
 import { Repository, EntityRepository } from "typeorm";
 import { ShortenerDatabaseException } from './../exceptions';
+import ShortenerRepositoryInterface from './shortener.repository.interface';
 
 /**
  * @author Jeyson Luiz Romualdo
@@ -11,7 +12,7 @@ import { ShortenerDatabaseException } from './../exceptions';
  * @extends {Repository<ShortenerEntity>}
  */
 @EntityRepository(ShortenerEntity)
-export class ShortenerRepository extends Repository<ShortenerEntity> {
+export class ShortenerRepository extends Repository<ShortenerEntity> implements ShortenerRepositoryInterface {
 
     /**
      * @param {ShortenerDTO} shortenerDTO

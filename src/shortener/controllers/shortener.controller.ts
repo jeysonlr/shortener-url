@@ -1,8 +1,8 @@
 import { ApiTags } from '@nestjs/swagger';
 import { ShortenerService } from '../services';
 import { ROUTES, SUCCESS_MESSAGES } from '../constants';
-import { CreateShortenerDTO, ResponseShortenerDTO } from '../dtos';
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { ApiInfoDTO, CreateShortenerDTO, ResponseShortenerDTO } from '../dtos';
 import { CreatedResponseDataDto, OkResponseDataDto } from './../../shared/dto';
 
 /**
@@ -16,6 +16,16 @@ export class ShortenerController {
     constructor(
         private readonly shortenerService: ShortenerService
     ) { }
+
+    @Get(ROUTES.API_INFO)
+    async checkApi() {
+        const apiInfo = new ApiInfoDTO();
+        apiInfo.ambiente = process.env.ENVIRONMENT;
+        apiInfo.versao = process.env.VERSION;
+        apiInfo.endereco = process.env.URI;
+        apiInfo.message = process.env.MESSAGE;
+        return new OkResponseDataDto<ApiInfoDTO>(SUCCESS_MESSAGES.GET_SUCCESS, apiInfo);
+    }
 
     @Post(ROUTES.SHORTENER_URL)
     async create(
