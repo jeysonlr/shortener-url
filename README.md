@@ -1,8 +1,24 @@
 ## Descricao
+```
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-# ATENCÃO, siga atentamente todos os passos, na sequência
+```
+
+## Acesse aqui
+Verão em producao [aqui](https://wisershortener.herokuapp.com/api)
+
+```
+
+```
+
+## Documentação
+Documentação [aqui](https://wisershortener.herokuapp.com/documentation)
+
+
+```
+
+```
+
 
 ## Iniciando containêrs do banco de dados e do (SGBD)
 ```
@@ -23,7 +39,6 @@ USUARIO: pguser (usuario e senha utilizados no docker-compose.yml)
 SENHA: pgpassword (usuario e senha utilizados no docker-compose.yml)
 BASE DE DADOS: nao precisa informar valor
 
-
 ```
 
 ## Rodando localmente a API
@@ -38,13 +53,8 @@ $ npm install
 
 ## Documentacão com as rotas da API
 ```
-local
-
 http://localhost:8081/documentation
 
-em producao
-
-https://wisershortener.herokuapp.com/documentation
 ```
 
 ## Running the app
@@ -62,10 +72,6 @@ $ npm run start:dev
 ```bash
 
 $ yarn test
-```
-
-```
-Verão em producao aqui  https://wisershortener.herokuapp.com
 ```
 
 ### email
