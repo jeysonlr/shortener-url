@@ -4,6 +4,10 @@
 
 # ATENCÃO, siga atentamente todos os passos, na sequência
 
+
+Verão em producao [aqui](https://wisershortener.herokuapp.com/api)
+Documentação [aqui](https://wisershortener.herokuapp.com/documentation)
+
 ## Iniciando containêrs do banco de dados e do (SGBD)
 ```
 $ docker-compose up -d --build
@@ -44,7 +48,6 @@ http://localhost:8081/documentation
 
 em producao
 
-https://wisershortener.herokuapp.com/documentation
 ```
 
 ## Running the app
@@ -63,11 +66,6 @@ $ npm run start:dev
 
 $ yarn test
 ```
-
-
-Verão em producao aqui  https://wisershortener.herokuapp.com
-Verão em producao aqui[here](https://wisershortener.herokuapp.com)
-
 
 ### email
 ``
