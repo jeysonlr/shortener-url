@@ -98,6 +98,44 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Api info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api info PRODUCAO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wisershortener.herokuapp.com/api",
+					"protocol": "https",
+					"host": [
+						"wisershortener",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
