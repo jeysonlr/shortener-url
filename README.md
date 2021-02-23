@@ -58,6 +58,12 @@ $ npm run start:dev
 
 ```
 
+## Running tests
+```bash
+
+$ yarn test
+```
+
 ```
 Verão em producao aqui  https://wisershortener.herokuapp.com
 ```

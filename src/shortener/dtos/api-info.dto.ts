@@ -21,5 +21,9 @@ export class ApiInfoDTO {
 
     @IsNotEmpty()
     @IsString()
-    message: string;
+    mensagem: string;
+
+    @IsNotEmpty()
+    @IsString()
+    documentacao: string
 }

@@ -3,7 +3,6 @@ import { ShortenerService } from './services';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ShortenerController } from './controllers';
 import { ShortenerRepository } from './repositories';
-import { StringFormatterHelper } from 'src/shared/helper';
 
 @Module({
     imports: [
@@ -12,7 +11,6 @@ import { StringFormatterHelper } from 'src/shared/helper';
         ], 'databaseConnection'),
     ],
     providers: [
-        StringFormatterHelper,
         ShortenerService,
     ],
     controllers: [

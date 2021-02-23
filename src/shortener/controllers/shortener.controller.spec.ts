@@ -5,11 +5,17 @@ import { FakeShortenerRepository } from '../repositories/fakes/shortener.reposit
 describe('ShortenerController', () => {
     let shortenerService: ShortenerService;
     let shortenerController: ShortenerController;
-    let fakeShortenerRepository: FakeShortenerRepository;
+    let shortenerRepository: FakeShortenerRepository;
 
     beforeEach(async () => {
-        fakeShortenerRepository = new FakeShortenerRepository();
-        shortenerService = new ShortenerService(fakeShortenerRepository);
+        shortenerRepository = new FakeShortenerRepository();
+        shortenerService = new ShortenerService(shortenerRepository);
         shortenerController = new ShortenerController(shortenerService);
+    });
+
+    it('should be defined', () => {
+        expect(shortenerController).toBeDefined();
+        expect(shortenerService).toBeDefined();
+        expect(shortenerRepository).toBeDefined();
     });
 });

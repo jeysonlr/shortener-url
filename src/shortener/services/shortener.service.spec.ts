@@ -1,24 +1,53 @@
-import { ShortenerController } from "../controllers";
 import { ShortenerService } from "./shortener.service";
+import { CreateShortenerDTO, ResponseShortenerDTO } from "../dtos";
 import { FakeShortenerRepository } from "../repositories/fakes/shortener.repository.fake";
-import { ResponseShortenerDTO } from "../dtos";
+
+const mockUrl = 'http://wisereducacao.com';
+const shortedUrl = 'asdfj1234';
 
 describe('ShortenerService', () => {
     let shortenerService: ShortenerService;
-    let fakeShortenerRepository: FakeShortenerRepository;
+    let shortenerRepository: FakeShortenerRepository;
 
-    let shortenerUrl = '6s8ovs5al';
-
-    beforeEach(() => {
-        fakeShortenerRepository = new FakeShortenerRepository();
-        shortenerService = new ShortenerService(fakeShortenerRepository);
+    beforeEach(async () => {
+        shortenerRepository = new FakeShortenerRepository();
+        shortenerService = new ShortenerService(shortenerRepository);
     });
 
-    it('precisa buscar por url encurtada', async () => {
-        // await insertUserType();
-        const getShortener = await shortenerService.getShortener(shortenerUrl);
+    async function createShortener(): Promise<ResponseShortenerDTO> {
+        const createShortenerDto = new CreateShortenerDTO();
+        createShortenerDto.url = mockUrl;
+
+        const shortener = await shortenerService.createShortener(createShortenerDto);
+
+        const responseShortenerDTO = new ResponseShortenerDTO();
+        responseShortenerDTO.newUrl = shortener.newUrl;
+
+        return responseShortenerDTO;
+    }
+
+    it('should be defined', () => {
+        expect(shortenerRepository).toBeDefined();
+        expect(shortenerService).toBeDefined();
+    });
+
+    it('precisa buscar por encurtador', async () => {
+        await createShortener();
+        const getShortener = await shortenerService.getShortener(shortedUrl);
 
         expect(getShortener).toBeInstanceOf(ResponseShortenerDTO);
-        // expect(getShortener.description).toBe(description);
+        expect(mockUrl).toBe(getShortener.url);
+    });
+
+    it('criar um encurtador', async () => {
+        const createShortenerDto = new CreateShortenerDTO();
+        createShortenerDto.url = mockUrl;
+
+        const shortener = await shortenerService.createShortener(createShortenerDto);
+
+        const responseShortenerDTO = new ResponseShortenerDTO();
+        responseShortenerDTO.newUrl = shortener.newUrl;
+
+        expect(shortener).toBeInstanceOf(ResponseShortenerDTO);
     });
 });

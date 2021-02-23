@@ -23,7 +23,8 @@ export class ShortenerController {
         apiInfo.ambiente = process.env.ENVIRONMENT;
         apiInfo.versao = process.env.VERSION;
         apiInfo.endereco = process.env.URI;
-        apiInfo.message = process.env.MESSAGE;
+        apiInfo.mensagem = process.env.MESSAGE;
+        apiInfo.documentacao = process.env.DOCUMENTATION;
         return new OkResponseDataDto<ApiInfoDTO>(SUCCESS_MESSAGES.GET_SUCCESS, apiInfo);
     }
 
