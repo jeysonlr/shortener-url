@@ -1,11 +1,8 @@
-## Descricao
-```
-
-
-```
+## Descrição
+<br>
 
 ## Acesse aqui
-Verão em producao [aqui](https://wisershortener.herokuapp.com/api)
+Versão em produção [aqui](https://wisershortener.herokuapp.com/api)
 
 ```
 
@@ -25,10 +22,10 @@ Documentação [aqui](https://wisershortener.herokuapp.com/documentation)
 $ docker-compose up -d --build
 
 ```
-# após instalacão e conteinêrs rodando
+# após instalação e conteinêrs rodando
 ## Acessando sitema gerenciador de banco de dados (SGBD)
 ```
-acesse via http://localhot:8080
+acesse via http://localhost:8080
 
 utilizar as credencias utilizadas no docker-compose.yml
 
@@ -51,7 +48,7 @@ $ yarn
 $ npm install
 ```
 
-## Documentacão com as rotas da API
+## Documentação com as rotas da API
 ```
 http://localhost:8081/documentation
 
