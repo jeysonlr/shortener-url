@@ -9,21 +9,21 @@ export class ApiInfoDTO {
 
     @IsNotEmpty()
     @IsString()
-    versao: string;
+    version: string;
 
     @IsNotEmpty()
     @IsString()
-    ambiente: string;
+    environment: string;
 
     @IsNotEmpty()
     @IsString()
-    endereco: string;
+    address: string;
 
     @IsNotEmpty()
     @IsString()
-    mensagem: string;
+    message: string;
 
     @IsNotEmpty()
     @IsString()
-    documentacao: string
+    documentation: string
 }
