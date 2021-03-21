@@ -1,11 +1,11 @@
-## Descricao
+## Descrição
 ```
 
 
 ```
 
 ## Acesse aqui
-Verão em producao [aqui](https://wisershortener.herokuapp.com/api)
+Verão em produção [aqui](https://wisershortener.herokuapp.com/api)
 
 ```
 
