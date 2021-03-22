@@ -38,7 +38,7 @@ export class ShortenerController {
     }
 
     @Get(ROUTES.SHORTENER)
-    async getShortener(@Param() shortenerUrl: string) {
+    async getShortener(@Param('shorted_url') shortenerUrl: string) {
         const url = await this.shortenerService.getShortener(shortenerUrl);
         return new OkResponseDataDto<ResponseShortenerDTO>(SUCCESS_MESSAGES.GET_SUCCESS, url);
     }
